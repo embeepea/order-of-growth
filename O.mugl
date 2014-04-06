@@ -1,0 +1,131 @@
+<mugl>
+  <legend base="-1 1" anchor="-1 1" position="10 0" columns="2" border="1">
+    <icon border="0"/>
+  </legend>
+
+  <horizontalaxis id="n" min="0" max="20" type="number">
+    <labels format="%1d" spacing="1000 100 50 20 10 5 2 1"/>
+    <grid color="0xeeeeee"/>
+    <pan allowed="false"/>
+    <zoom allowed="false"/>
+  </horizontalaxis>
+  <verticalaxis id="O" min="0" max="2000">
+    <labels format="%1d" spacing="100000 10000 1000 100 50 20 10 5 2 1"/>
+    <title/>
+    <grid color="0xeeeeee"/>
+    <pan allowed="no"/>
+    <zoom anchor="0" min="10"/>
+  </verticalaxis>
+
+  <plot>
+    <horizontalaxis ref="n"><variable ref="n"/></horizontalaxis>
+    <verticalaxis ref="O"><variable ref="NFact"/></verticalaxis>
+    <legend label="N!"/>
+    <renderer type="pointline">
+      <option name="linecolor" value="0xff0000"/>
+      <option name="linewidth" value="3"/>
+    </renderer>
+  </plot>
+  <plot>
+    <horizontalaxis ref="n"><variable ref="n"/></horizontalaxis>
+    <verticalaxis ref="O"><variable ref="twoN"/></verticalaxis>
+    <legend label="2^N"/>
+    <renderer type="pointline">
+      <option name="linecolor" value="0xff0000"/>
+    </renderer>
+  </plot>
+
+  <plot>
+    <horizontalaxis ref="n"><variable ref="n"/></horizontalaxis>
+    <verticalaxis ref="O"><variable ref="N3"/></verticalaxis>
+    <renderer type="pointline">
+      <option name="linecolor" value="0x0000ff"/>
+      <option name="linewidth" value="3"/>
+    </renderer>
+  </plot>
+  <plot>
+    <horizontalaxis ref="n"><variable ref="n"/></horizontalaxis>
+    <verticalaxis ref="O"><variable ref="N2"/></verticalaxis>
+    <renderer type="pointline">
+      <option name="linecolor" value="0x0000ff"/>
+    </renderer>
+  </plot>
+
+  <plot>
+    <horizontalaxis ref="n"><variable ref="n"/></horizontalaxis>
+    <verticalaxis ref="O"><variable ref="NlogN"/></verticalaxis>
+    <renderer type="pointline">
+      <option name="linecolor" value="0x000000"/>
+      <option name="linewidth" value="3"/>
+    </renderer>
+  </plot>
+  <plot>
+    <horizontalaxis ref="n"><variable ref="n"/></horizontalaxis>
+    <verticalaxis ref="O"><variable ref="N"/></verticalaxis>
+    <renderer type="pointline">
+      <option name="linecolor" value="0x000000"/>
+    </renderer>
+  </plot>
+
+  <plot>
+    <horizontalaxis ref="n"><variable ref="n"/></horizontalaxis>
+    <verticalaxis ref="O"><variable ref="sqrtN"/></verticalaxis>
+    <renderer type="pointline">
+      <option name="linecolor" value="0x00ffff"/>
+      <option name="linewidth" value="3"/>
+    </renderer>
+  </plot>
+  <plot>
+    <horizontalaxis ref="n"><variable ref="n"/></horizontalaxis>
+    <verticalaxis ref="O"><variable ref="logN"/></verticalaxis>
+    <renderer type="pointline">
+      <option name="linecolor" value="0x00ffff"/>
+    </renderer>
+  </plot>
+
+  <plot>
+    <legend label="1"/>
+    <horizontalaxis ref="n"><variable ref="n"/></horizontalaxis>
+    <verticalaxis ref="O"><variable ref="K"/></verticalaxis>
+    <renderer type="pointline">
+      <option name="linecolor" value="0x00ff00"/>
+    </renderer>
+  </plot>
+
+  <data>
+    <variables>
+      <variable column="0" id="n" type="number"/>
+      <variable column="1" id="NFact" type="number"/>
+      <variable column="2" id="twoN" type="number"/>
+      <variable column="3" id="N3" type="number"/>
+      <variable column="4" id="N2" type="number"/>
+      <variable column="5" id="NlogN" type="number"/>
+      <variable column="6" id="N" type="number"/>
+      <variable column="7" id="sqrtN" type="number"/>
+      <variable column="8" id="logN" type="number"/>
+      <variable column="9" id="K" type="number"/>
+    </variables>
+    <values>
+1,1.000000,2.000000,1.000000,1.000000,0.000000,1.000000,1.000000,0.000000,1.000000
+2,2.000000,4.000000,8.000000,4.000000,1.386294,2.000000,1.414214,0.693147,1.000000
+3,6.000000,8.000000,27.000000,9.000000,3.295837,3.000000,1.732051,1.098612,1.000000
+4,24.000000,16.000000,64.000000,16.000000,5.545177,4.000000,2.000000,1.386294,1.000000
+5,120.000000,32.000000,125.000000,25.000000,8.047190,5.000000,2.236068,1.609438,1.000000
+6,720.000000,64.000000,216.000000,36.000000,10.750557,6.000000,2.449490,1.791759,1.000000
+7,5040.000000,128.000000,343.000000,49.000000,13.621371,7.000000,2.645751,1.945910,1.000000
+8,40320.000000,256.000000,512.000000,64.000000,16.635532,8.000000,2.828427,2.079442,1.000000
+9,362880.000000,512.000000,729.000000,81.000000,19.775021,9.000000,3.000000,2.197225,1.000000
+10,999999.000000,1024.000000,1000.000000,100.000000,23.025851,10.000000,3.162278,2.302585,1.000000
+11,999999.000000,2048.000000,1331.000000,121.000000,26.376848,11.000000,3.316625,2.397895,1.000000
+12,999999.000000,4096.000000,1728.000000,144.000000,29.818880,12.000000,3.464102,2.484907,1.000000
+13,999999.000000,8192.000000,2197.000000,169.000000,33.344342,13.000000,3.605551,2.564949,1.000000
+14,999999.000000,16384.000000,2744.000000,196.000000,36.946803,14.000000,3.741657,2.639057,1.000000
+15,999999.000000,32768.000000,3375.000000,225.000000,40.620753,15.000000,3.872983,2.708050,1.000000
+16,999999.000000,65536.000000,4096.000000,256.000000,44.361420,16.000000,4.000000,2.772589,1.000000
+17,999999.000000,131072.000000,4913.000000,289.000000,48.164627,17.000000,4.123106,2.833213,1.000000
+18,999999.000000,262144.000000,5832.000000,324.000000,52.026692,18.000000,4.242641,2.890372,1.000000
+19,999999.000000,524288.000000,6859.000000,361.000000,55.944341,19.000000,4.358899,2.944439,1.000000
+20,999999.000000,999999.000000,8000.000000,400.000000,59.914645,20.000000,4.472136,2.995732,1.000000
+    </values>
+  </data>
+</mugl>
